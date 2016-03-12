@@ -1,0 +1,13 @@
+<h3>Sign in</h3>
+
+{{#if errorMessage}}
+  <div class="alert alert-danger">{{errorMessage}}</div>
+{{/if}}
+
+{{#if session.isAuthenticated}}
+  <h1>session.isAuthenticated returning true.</h1>
+  <a {{action "invalidateSession"}}>Logout</a>
+{{else}}
+  <h1>session.isAuthenticated returning false.</h1>
+  <a {{action 'authenticateSessionWithGoogle'}}>Login with Google</a>
+{{/if}}
